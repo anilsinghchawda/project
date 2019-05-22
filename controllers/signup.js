@@ -5,7 +5,7 @@ var users = require("../models/users");
 routes.post("/", function(req, res){
 	console.log(req.body);
 	users.insert(req.body, function(err, result){
-		res.redirect("/login");
+		res.redirect("/");
 	})
 	// users.insert{req.body,}
 
