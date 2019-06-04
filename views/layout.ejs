@@ -57,15 +57,14 @@
     <ul class="navbar-nav ml-auto">  
 
       <li class="nav-item ml-auto">
-        <a href="/login" class="nav-link mr-3" data-toggle="modal" data-target="#login">Login</a>
-
+        <a class="nav-link mr-3" data-toggle="modal" data-target="#login">Login</a>
       </li>
 
 
 
-      <!-- <li class="nav-item ml-auto">
+      <li class="nav-item ml-auto">
         <a href="#" class="nav-link mr-3">My Cart <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
-      </li> -->
+      </li>
       <li class="nav-item ml-auto">
         <a href="#" class="nav-link mr-3"><i class="fa fa-id-card" aria-hidden="true"></i> My Account</a>
       </li>
@@ -89,21 +88,18 @@
                   <input type="password" name="password" class="form-control">
                 </div>
                 
-                 <button class="btn btn-success text-center" type="submit">Login</button> 
+                 <a href="login" class="btn btn-success" type="submit">Login</a>
                  <button class="btn btn-danger m-3" data-dismiss="modal">Cancel</button> 
                  <p class="text-center text-small">If you are new member <a href="/signup" data-toggle="modal" data-target="#signup" data-dismiss="modal">SignUp</a></p>
               </div>
             </div>
           </div>
         </div>
-
-
-
         <div id="signup" class="modal fade"> 
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <p class="text-center h3">SignUp</p>
+                <p class="text-center h4">SignUp</p>
               </div>
               <div class="modal-body">
                 <form action="/signup" method="post">
@@ -120,9 +116,34 @@
                     <input type="password" class="form-control" name="password">
                   </div>
                   <div class="form-group">
+                    <label class="mr-4">Gender :</label>
+                    Male <input type="radio" value="male" name="gender">
+                    Female <input type="radio" value="female" name="gender">
+                  </div>
+                  <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control">
+                      <option>Select</option>
+                      <option>Amritsar</option>
+                      <option>Bopal</option>
+                      <option>Chindwada</option>
+                      <option>Dhar</option>
+                      <option>Fatehpur</option>
+                      <option>Gurgaun</option>
+                      <option>Indore</option>
+                      <option>Kanpur</option>
+                      <option>Lahore</option>
+                      <option>Mumbai</option>
+                      <option>Pithampur</option>
+                      <option>Surat</option>
+                      <option>Tripura</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
                     <label>Contact</label>
                     <input type="text" name="contact" class="form-control">
                   </div>
+                  
                   <button href="signup" class="btn btn-success m-2" type="submit">SignUp</button>
                   <a href="/login" class="btn btn-outline-success">Login</a>
                 </form>
@@ -131,16 +152,9 @@
           </div>
         </div>
 
-
-
 <%- include(pagename) %>
 
-
-
-
-
 <div style="min-height: 500px">
-  
 </div>
 
 
