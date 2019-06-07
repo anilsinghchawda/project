@@ -2,6 +2,8 @@ for UML : - https://tallyfy.com/uml-diagram/
 for example of UML :- https://www.uml-diagrams.org/index-examples.html
 
 
+BEHAVIOURAL UML DIAGRAM
+
 Activity Diagram. ...
 Use Case Diagram. ...
 Interaction Overview Diagram. ...
@@ -10,3 +12,17 @@ Sequence UML Diagram. ...
 Class Diagram. ...
 Object Diagram. ...
 Component Diagram.
+
+
+
+
+.\.\.\.\.\.\.\.\.\.\.\.\.\.\.\\.\.\.\.\.\.\.\.\.\.\.\.\/././././././/././././././././/././././/././.././.
+STRUCTURAL UML DIAGRAM
+
+Class Diagram
+Object Diagram
+Component Diagram
+Composite Structure Diagram
+Deployment Diagram
+Package Diagram
+Profile Diagram
