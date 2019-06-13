@@ -12,6 +12,7 @@ import { ImageComponent } from './image/image.component';
 import { CatnavComponent } from './catnav/catnav.component';
 import { ProductComponent } from './product/product.component';
 import { EachproComponent } from './eachpro/eachpro.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EachproComponent } from './eachpro/eachpro.component';
     ImageComponent,
     CatnavComponent,
     ProductComponent,
-    EachproComponent
+    EachproComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

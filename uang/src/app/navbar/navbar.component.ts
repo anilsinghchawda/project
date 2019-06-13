@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-
+  bool:boolean;
+  signup(){
+  	this.bool=true;
+  }
+  login(){
+  	this.bool=false;
+  }
   ngOnInit() {
   }
 
