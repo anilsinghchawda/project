@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +14,6 @@ import { ImageComponent } from './image/image.component';
 import { CatnavComponent } from './catnav/catnav.component';
 import { ProductComponent } from './product/product.component';
 import { EachproComponent } from './eachpro/eachpro.component';
-import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,12 @@ import { SignupComponent } from './signup/signup.component';
     ImageComponent,
     CatnavComponent,
     ProductComponent,
-    EachproComponent,
-    SignupComponent
+    EachproComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

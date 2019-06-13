@@ -1,21 +1,50 @@
 import { Component, OnInit } from '@angular/core';
+import { obj } from '../models';
+import * as bootstrap from "bootstrap";
+import * as $ from 'jquery';
 
-@Component({
+ @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 
+
+  user : obj={
+  contact : null,
+  password : null,
+  name : null,
+  surname : null,
+  email : null,
+  address : null
+
+    };
+
   constructor() { }
+  empty(){
+    this.user={} as obj; 
+  }
   bool:boolean;
-  signup(){
+  signcheck(){
+    this.user={} as obj;
   	this.bool=true;
   }
-  login(){
+  logcheck(){
+    this.user={} as obj;
   	this.bool=false;
   }
-  ngOnInit() {
-  }
+  login(){
+    jQuery("#login").modal("hide");
+    console.log(this.user.contact);
+    console.log(this.user.password);
 
+  }
+  signup(){
+    this.bool=false;
+    jQuery("#login").modal("show");
+  }
+  ngOnInit() {
+    jQuery("#login").modal("show");
+  }
 }
