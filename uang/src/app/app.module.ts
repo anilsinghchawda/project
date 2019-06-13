@@ -14,6 +14,7 @@ import { ImageComponent } from './image/image.component';
 import { CatnavComponent } from './catnav/catnav.component';
 import { ProductComponent } from './product/product.component';
 import { EachproComponent } from './eachpro/eachpro.component';
+import { HttpClientModule } from '@angular/common/http' 
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EachproComponent } from './eachpro/eachpro.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

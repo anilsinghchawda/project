@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { obj } from '../models';
 import * as bootstrap from "bootstrap";
 import * as $ from 'jquery';
+import { LogService } from '../services/log.service';
+import { Observable } from 'rxjs';
 
  @Component({
   selector: 'app-navbar',
@@ -21,7 +23,7 @@ export class NavbarComponent implements OnInit {
 
     };
 
-  constructor() { }
+  constructor(private dulClass : LogService) { }
   empty(){
     this.user={} as obj; 
   }
@@ -41,8 +43,11 @@ export class NavbarComponent implements OnInit {
 
   }
   signup(){
-    this.bool=false;
     jQuery("#login").modal("show");
+    this.dulClass.loginFun(this.user).subscribe((back : any)=>{
+    this.bool = false;
+    this.user = {} as obj;
+  })
   }
   ngOnInit() {
     jQuery("#login").modal("show");
