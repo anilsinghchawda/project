@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
 
-
+public  otp = false;
   user : obj={
   contact : null,
   password : null,
@@ -44,10 +44,29 @@ export class NavbarComponent implements OnInit {
   }
   signup(){
     jQuery("#login").modal("show");
-    this.dulClass.loginFun(this.user).subscribe((back : any)=>{
+    console.log("Navbar sending", this.user);
+    this.dulClass.signFun(this.user).subscribe((back : any)=>{
     this.bool = false;
     this.user = {} as obj;
+    this.otp=true;
+    console.log("SignUP successfull(navbar component says)");
   })
+
+  }
+  obje={
+    name:null,
+    age:null
+  }
+  comeObj:{
+    name : string;
+    age :number;
+  }
+
+  get(){
+    console.log("/ get recieve at navbar", this.comeObj);
+    this.dulClass.get().subscribe((come : any)=>{
+      this.comeObj=come;
+    })
   }
   ngOnInit() {
     jQuery("#login").modal("show");

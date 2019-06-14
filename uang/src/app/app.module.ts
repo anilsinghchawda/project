@@ -14,7 +14,9 @@ import { ImageComponent } from './image/image.component';
 import { CatnavComponent } from './catnav/catnav.component';
 import { ProductComponent } from './product/product.component';
 import { EachproComponent } from './eachpro/eachpro.component';
-import { HttpClientModule } from '@angular/common/http' 
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+import { AccountComponent } from './account/account.component' 
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http'
     ImageComponent,
     CatnavComponent,
     ProductComponent,
-    EachproComponent
+    EachproComponent,
+    CartComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

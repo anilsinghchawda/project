@@ -6,11 +6,17 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class LogService {
-
-loginFun(user : obj){
-	let url = "localhost:3000/login";
-	return this.http.post(url, user);
+public url = "localhost:3000";
+signFun(user : obj){
+	
+	console.log("service forwarding", user)
+	return this.http.post(this.url, user);
+}
+get(){
+	console.log("/ get at Service recieving", this.http.get(this.url))
+	return this.http.get(this.url);
 }
   constructor(private http : HttpClient ) { }
 }
+
 
