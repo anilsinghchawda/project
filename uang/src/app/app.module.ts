@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import { ImageComponent } from './image/image.component';
 import { CatnavComponent } from './catnav/catnav.component';
 import { ProductComponent } from './product/product.component';
 import { EachproComponent } from './eachpro/eachpro.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+import { AccountComponent } from './account/account.component' 
 
 @NgModule({
   declarations: [
@@ -24,11 +29,15 @@ import { EachproComponent } from './eachpro/eachpro.component';
     ImageComponent,
     CatnavComponent,
     ProductComponent,
-    EachproComponent
+    EachproComponent,
+    CartComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
