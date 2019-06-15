@@ -22,7 +22,7 @@ public  otp = false;
   address : null
 
     };
-
+// user = {} as obj;
   constructor(private dulClass : LogService) { }
   empty(){
     this.user={} as obj; 
@@ -53,14 +53,14 @@ public  otp = false;
   })
 
   }
-  obje={
+  comeObj:{
     name:null,
     age:null
   }
-  comeObj:{
-    name : string;
-    age :number;
-  }
+  // comeObj:{
+  //   name : string;
+  //   age :number;
+  // }
 
   get(){
     console.log("/ get recieve at navbar", this.comeObj);

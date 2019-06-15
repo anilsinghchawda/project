@@ -11,6 +11,7 @@ routes.get("/", function(req, res){
 
 	console.log("/ get sending obj", obj);
 	console.log("/ get running");
+	res.send(obj);
 	
 });
 
