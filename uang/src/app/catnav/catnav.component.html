@@ -1,21 +1,19 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md navColor navbar-dark">
   <!-- Brand -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="Navbar">
     <ul class="navbar-nav">
       <li class="nav-item">
         <h5 class="text-light m-2">Category :</h5>
       </li>
-      <li class="nav-item">
-        <a class="nav-link btn-outline-info" href="#">Mobile</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link btn-outline-info" href="#">Laptop</a>
+      <li class="nav-item" *ngFor="let x of category">
+        <a class="nav-link btn-outline-info" href="#">{{x.name}}</a>
       </li>
   </ul>
 </div>
 </nav>
+</div>

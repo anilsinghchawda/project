@@ -8,7 +8,6 @@ routes.get("/", function(req, res){
 		name : "Anil",
 		age : 21
 	};
-
 	console.log("/ get sending obj", obj);
 	console.log("/ get running");
 	res.send(obj);

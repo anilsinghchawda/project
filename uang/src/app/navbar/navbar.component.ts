@@ -20,8 +20,7 @@ public  otp = false;
   surname : null,
   email : null,
   address : null
-
-    };
+  };
 // user = {} as obj;
   constructor(private dulClass : LogService) { }
   empty(){
@@ -57,17 +56,15 @@ public  otp = false;
     name:null,
     age:null
   }
-  // comeObj:{
-  //   name : string;
-  //   age :number;
-  // }
-
+ 
   get(){
-    console.log("/ get recieve at navbar", this.comeObj);
-    this.dulClass.get().subscribe((come : any)=>{
-      this.comeObj=come;
-    })
-  }
+   this.dulClass.get().subscribe((come : any)=>{
+     console.log(this.comeObj);
+     return this.comeObj=come;
+   });
+  };
+
+
   ngOnInit() {
     jQuery("#login").modal("show");
   }
