@@ -16,7 +16,9 @@ import { ProductComponent } from './product/product.component';
 import { EachproComponent } from './eachpro/eachpro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
-import { AccountComponent } from './account/account.component' 
+import { AccountComponent } from './account/account.component';
+import { ArrivalComponent } from './arrival/arrival.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AccountComponent } from './account/account.component'
     ProductComponent,
     EachproComponent,
     CartComponent,
-    AccountComponent
+    AccountComponent,
+    ArrivalComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../services/category.service';
+import { cateObj } from '../models';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-catnav',
@@ -7,11 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatnavComponent implements OnInit {
 
+public category:cateObj[];
 
-
-  constructor() { }
+  constructor(private dulClass : CategoryService) { }
 
   ngOnInit() {
+  	this.dulClass.get().subscribe((cateStr : any)=>{
+  		this.category.push(cateStr);
+  		console.log("Recieve on catnav",this.category);
+
+  	});
   }
 
 }
