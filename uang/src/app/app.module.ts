@@ -19,6 +19,12 @@ import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import { ArrivalComponent } from './arrival/arrival.component';
 import { SearchComponent } from './search/search.component';
+import { KccComponent } from './kcc/kcc.component';
+import { SoldComponent } from './sold/sold.component';
+import { SeminarsComponent } from './seminars/seminars.component';
+import { AdviserComponent } from './adviser/adviser.component';
+import { ApplyComponent } from './apply/apply.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { SearchComponent } from './search/search.component';
     CartComponent,
     AccountComponent,
     ArrivalComponent,
-    SearchComponent
+    SearchComponent,
+    KccComponent,
+    SoldComponent,
+    SeminarsComponent,
+    AdviserComponent,
+    ApplyComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
