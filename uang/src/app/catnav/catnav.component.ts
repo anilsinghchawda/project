@@ -17,7 +17,7 @@ public category:cateObj[];
 
   ngOnInit() {
   	this.dulClass.get().subscribe((cateStr : any)=>{
-  		this.category.push(cateStr);
+  		this.category=cateStr;
   		console.log("Recieve on catnav",this.category);
 
   	});
