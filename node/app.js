@@ -10,8 +10,8 @@ app.use(function(req, res, next) {
 
 });
 
-app.use(routes);
 app.use(bodyParser());
+app.use(routes);
 
 var port = process.env.PORT || 3000;
 app.listen(3000, function(){

@@ -2,6 +2,7 @@ var express = require("express");
 var routes = express.Router();
 var category = require("../models/category");
 var mongo  = require("mongodb");
+
 routes.get("/", function(req, res){
 	category.find({}, function(err, result){
 		console.log(result);

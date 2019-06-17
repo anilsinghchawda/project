@@ -9,15 +9,14 @@ routes.get("/", function(req, res){
 		age : 21
 	};
 	console.log("/ get sending obj", obj);
-	console.log("/ get running");
 	res.send(obj);
 	
 });
 
 routes.post("/", function(req, res){
 	console.log("login Recieving", req.body);
-	user.insert(req.body, function(req, res){
-		res.send("SignUp Successfully");
+	user.insert(req.body, function(err, result){
+		res.send(result);
 	})
 	
 });

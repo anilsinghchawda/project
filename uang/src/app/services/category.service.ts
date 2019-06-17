@@ -9,7 +9,7 @@ export class CategoryService {
 
   constructor(private http : HttpClient) { }
   get(){
-  	let url = "/api/category";
+  	let url = "http://localhost:3000/category";
   	console.log("Cate recieve at service", this.http.get(url));
   	  return this.http.get(url);
   }

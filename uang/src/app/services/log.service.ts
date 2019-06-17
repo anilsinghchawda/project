@@ -6,9 +6,8 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class LogService {
-public url = "/api";
+public url = "http://localhost:3000";
 signFun(user : obj){
-	
 	console.log("service forwarding", user)
 	return this.http.post(this.url, user);
 }
