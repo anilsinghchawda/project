@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms'
+import { AdminModule } from './admin/admin.module';
+
+
 import { AppComponent } from './app.component';
 import { BrandComponent } from './brand/brand.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -53,7 +55,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

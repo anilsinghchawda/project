@@ -4,6 +4,12 @@ import * as bootstrap from "bootstrap";
 import * as $ from 'jquery';
 import { LogService } from '../services/log.service';
 import { Observable } from 'rxjs';
+import { MatInput } from '@angular/material/input';
+ 
+
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+
 
  @Component({
   selector: 'app-navbar',
@@ -11,6 +17,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+   emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 
 public  otp = false;
   user : obj={
@@ -49,6 +59,7 @@ public  otp = false;
     this.user = {} as obj;
     this.otp=true;
     console.log("SignUP successfull(navbar component says)");
+    return back;
   })
 
   }

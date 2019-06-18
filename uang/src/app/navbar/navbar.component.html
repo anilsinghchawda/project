@@ -26,9 +26,9 @@
         <div class="dropdown ">
        <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">Your Opinion</button>
     <div class="dropdown-menu">
-      <a class="dropdown-item text-dark" routerLink="seminars" routerLinkActive="active-link">Share</a>
-      <a class="dropdown-item text-dark" routerLink="kcc" routerLinkActive="active-link">Problem</a>
-      <a class="dropdown-item text-dark" routerLink="kcc" routerLinkActive="active-link">Feedback</a>
+      <a class="dropdown-item text-dark" routerLink="share" routerLinkActive="active-link">Share</a>
+      <a class="dropdown-item text-dark" routerLink="problem" routerLinkActive="active-link">Problem</a>
+      <a class="dropdown-item text-dark" routerLink="feedback" routerLinkActive="active-link">Feedback</a>
     </div>
       </div> </li>
       </ul>
@@ -57,20 +57,20 @@
             <div class="modal-body">
               <div class="form-group">
                 <label>Mobile Number/Email Id</label>
-                 <input type="text" [(ngModel)]="user.contact" class="form-control" placeholder="Mobile OR Email">
+                 <input matInput type="text" [(ngModel)]="user.contact" class="form-control" placeholder="Mobile OR Email">
                 </div>
                 <div *ngIf="otp * bool" class="form-group">
                 <label>Enter OTP</label>
-                  <input type="text" class="form-control" placeholder="Mobile OTP">                  
+                  <input matInput type="text" class="form-control" placeholder="Mobile OTP">                  
                 </div>
                 <div *ngIf="otp * bool" class="form-group">
                 <label>Create Password</label>
-                  <input type="text" [(ngModel)]="user.password" class="form-control" placeholder="Create Password">                  
+                  <input matInput type="text" [(ngModel)]="user.password" class="form-control" placeholder="Create Password">                  
                 </div>
 
                 <div *ngIf="!bool * !otp" class="form-group">
                   <label>Password</label>
-                  <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="Password">
+                  <input matInput type="password" [(ngModel)]="user.password" class="form-control" placeholder="Password">
                 </div>
                  <a *ngIf="!bool"class="btn btn-success text-light" (click)="login()">Login</a>
                  <a *ngIf="bool" class="btn btn-success text-light" (click)="signup()">SignUp</a>
@@ -81,7 +81,10 @@
     </div>
   </div>
 </div>
+
+
 <app-search></app-search>
+
 
 <!-- <button (click)="get()">Get data</button>
 <div class="jumbotron">

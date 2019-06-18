@@ -10,7 +10,6 @@ routes.get("/", function(req, res){
 	};
 	console.log("/ get sending obj", obj);
 	res.send(obj);
-	
 });
 
 routes.post("/", function(req, res){

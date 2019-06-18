@@ -15,10 +15,10 @@ public category:cateObj[];
 
   constructor(private dulClass : CategoryService) { }
 
-  ngOnInit() {
+  ngOnInit(){
   	this.dulClass.get().subscribe((cateStr : any)=>{
   		this.category=cateStr;
-  		console.log("Recieve on catnav",this.category);
+  		console.log("Recieve on catnav", this.category);
 
   	});
   }
