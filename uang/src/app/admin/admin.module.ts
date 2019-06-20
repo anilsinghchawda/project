@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { CategoryComponent } from './category/category.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,7 +12,9 @@ import { HomeComponent } from './home/home.component';
   declarations: [CategoryComponent, NavbarComponent, HomeComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

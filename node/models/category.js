@@ -10,3 +10,8 @@ module.exports.find=function(obj, cb){
 		client.db("project").collection("category").find(obj).toArray(cb);
 	})
 }
+module.exports.remove=function(id, cb){
+	connect(function(err, client){
+		client.db("project").collection("category").remove(id, cb);
+	})
+}

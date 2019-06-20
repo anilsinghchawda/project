@@ -10,9 +10,16 @@ routes.get("/", function(req, res){
 	})
 });
 routes.post("/", function(req, res){
-	console.log("login Recieving", req.body);
+	if(req.body._id){
+		category.remove({_id : mongo.ObjectId(req.body._id)}, function(err, result){
+		console.log(mongo.ObjectId(req.body._id));
+			res.send(result);
+		})
+	}else{
+	console.log("Category added controllers say", req.body);
 	category.insert(req.body, function(err, result){
-		res.send("SignUp Successfully", result);
+		res.send(result.ops[0]);
 	})
+}
 });
 module.exports=routes;
