@@ -1,7 +1,13 @@
 var express = require("express");
 var app = express();
-var bodyParser = require("body-parser");
 var routes = require("./config/routes");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var session = require("express-session");
+var flash = require("express-flash");
+var cache = require("nocache");
+var upload = require("express-fileupload");
+var random = require("randomstring");
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -11,8 +17,15 @@ app.use(function(req, res, next) {
 
 });
 
-app.use(bodyParser());
+
 app.use(routes);
+app.use(bodyParser()); 
+app.use(express.static(__dirname +"/public/"));
+app.use(cookieParser());
+app.use(session({ secret : "anil"}));
+app.use(cache());
+app.use(flash());
+app.use(upload());
 
 var port = process.env.PORT || 3000;
 app.listen(3000, function(){

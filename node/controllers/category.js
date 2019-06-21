@@ -11,8 +11,9 @@ routes.get("/", function(req, res){
 });
 routes.post("/", function(req, res){
 	if(req.body._id){
-		category.remove({_id : mongo.ObjectId(req.body._id)}, function(err, result){
-		console.log(mongo.ObjectId(req.body._id));
+		var id = new mongo.ObjectId(req.body._id);
+		console.log(id);
+		category.remove({_id : id}, function(err, result){
 			res.send(result);
 		})
 	}else{

@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { CategoryComponent } from './category/category.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
-  declarations: [CategoryComponent, NavbarComponent, HomeComponent],
+  declarations: [CategoryComponent, NavbarComponent, HomeComponent, ProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

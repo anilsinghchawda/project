@@ -12,6 +12,6 @@ module.exports.find=function(obj, cb){
 }
 module.exports.remove=function(id, cb){
 	connect(function(err, client){
-		client.db("project").collection("category").remove(id, cb);
+		client.db("project").collection("category").deleteMany(id, cb);
 	})
 }

@@ -36,14 +36,18 @@ public  otp = false;
   empty(){
     this.user={} as obj; 
   }
-  bool:boolean;
+  sign:boolean;
   signcheck(){
     this.user={} as obj;
-  	this.bool=true;
+  	this.sign=true;
+  }
+  otpCheck(){
+    this.otp = true;
   }
   logcheck(){
     this.user={} as obj;
-  	this.bool=false;
+  	this.sign=false;
+    this.otp = false;
   }
   login(){
     jQuery("#login").modal("hide");
@@ -55,9 +59,9 @@ public  otp = false;
     jQuery("#login").modal("show");
     console.log("Navbar sending", this.user);
     this.dulClass.signFun(this.user).subscribe((back : any)=>{
-    this.bool = false;
+    this.sign = false;
     this.user = {} as obj;
-    this.otp=true;
+    this.otp=false;
     console.log("SignUP successfull(navbar component says)");
     return back;
   })
@@ -77,6 +81,8 @@ public  otp = false;
 
 
   ngOnInit() {
+    this.sign = false;
+    this.otp = false;
     jQuery("#login").modal("show");
   }
 }

@@ -2,21 +2,31 @@
 	color: #17A2B8;
 	font-family: "Times in Roman", serif,;
 }
+.icon{
+	height: 80px;
+	width: 75px;
+	border-radius: 50px;
+}
 .h12{
 	color:#000;
 }
+#myMenu ul li a:hover{
+	border-radius: 5px;
+	background-color: #fff !important;
+	color: #0A9600 !important;
+}
 #navbar-1
 {
-	background-color:#000000 !important ;
+	background-color: green !important ;
 	color: #fff !important;	
 }
 #navbar-1 ul li :hover
 {
 	color: #000;
 }
-#myMenu ul li a{ 
-	color: #17A2B8;
- }
+// #myMenu ul li a{ 
+// 	color: #17A2B8;
+//  }
 #sp-1
 {
 	color: #17A2B8;

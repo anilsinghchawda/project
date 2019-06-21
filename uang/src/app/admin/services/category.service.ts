@@ -17,6 +17,7 @@ export class CategoryService {
 		 return this.HttpClient.post(this.url, a);
 	}
 	delCate(obj : cateStr){
+		console.log("Service posting for deleting ", obj);
 		return this.HttpClient.post(this.url, obj);
 	}
 
