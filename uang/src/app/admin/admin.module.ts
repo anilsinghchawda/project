@@ -8,14 +8,21 @@ import { CategoryComponent } from './category/category.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { UsersComponent } from './users/users.component';
+import { AdminComponent } from './admin.component';
 
 @NgModule({
-  declarations: [CategoryComponent, NavbarComponent, HomeComponent, ProductComponent],
-  imports: [
+  declarations: [CategoryComponent,
+  NavbarComponent, 
+  HomeComponent, 
+  ProductComponent, 
+  UsersComponent, AdminComponent],
+  imports:[
     CommonModule,
     AdminRoutingModule,
     FormsModule,
     HttpClientModule
-  ]
+    ],
+    bootstrap: [AdminComponent]
 })
 export class AdminModule { }

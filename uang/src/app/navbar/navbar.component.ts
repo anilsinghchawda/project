@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { obj } from '../models';
 import * as bootstrap from "bootstrap";
 import * as $ from 'jquery';
 import { LogService } from '../services/log.service';
 import { Observable } from 'rxjs';
 import { MatInput } from '@angular/material/input';
- 
 
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-
 
  @Component({
   selector: 'app-navbar',
@@ -23,44 +20,32 @@ export class NavbarComponent implements OnInit {
   ]);
 
 public  otp = false;
-  user : obj={
-  contact : null,
-  password : null,
-  name : null,
-  surname : null,
-  email : null,
-  address : null
-  };
-// user = {} as obj;
+ 
   constructor(private dulClass : LogService) { }
   empty(){
-    this.user={} as obj; 
   }
   sign:boolean;
   signcheck(){
-    this.user={} as obj;
   	this.sign=true;
   }
   otpCheck(){
     this.otp = true;
   }
   logcheck(){
-    this.user={} as obj;
   	this.sign=false;
     this.otp = false;
   }
-  login(){
+  login(obj :NgForm):void{
+    console.log("....................", obj.value);
+
     jQuery("#login").modal("hide");
-    console.log(this.user.contact);
-    console.log(this.user.password);
 
   }
-  signup(){
+  signup(obj : NgForm):void{
     jQuery("#login").modal("show");
-    console.log("Navbar sending", this.user);
-    this.dulClass.signFun(this.user).subscribe((back : any)=>{
+    console.log("Navbar sending");
+    this.dulClass.signFun(obj).subscribe((back : any)=>{
     this.sign = false;
-    this.user = {} as obj;
     this.otp=false;
     console.log("SignUP successfull(navbar component says)");
     return back;

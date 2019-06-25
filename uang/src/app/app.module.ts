@@ -27,6 +27,7 @@ import { SeminarsComponent } from './seminars/seminars.component';
 import { AdviserComponent } from './adviser/adviser.component';
 import { ApplyComponent } from './apply/apply.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     SeminarsComponent,
     AdviserComponent,
     ApplyComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,

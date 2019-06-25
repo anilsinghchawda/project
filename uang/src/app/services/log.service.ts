@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { obj } from '../models';
+// import { obj } from '../models';
+import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'
 
 @Injectable({
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class LogService {
 public url = "http://localhost:3000";
-signFun(user : obj){
+signFun(user : NgForm){
 	console.log("service forwarding", user)
 	return this.http.post(this.url, user);
 }

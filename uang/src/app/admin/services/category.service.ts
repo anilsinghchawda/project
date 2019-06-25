@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { cateStr} from '../models';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +13,11 @@ export class CategoryService {
 	}
 	addCate(a:cateStr){
 		console.log("Service posting", a);
-		 return this.HttpClient.post(this.url, a);
+		return this.HttpClient.post(this.url, a);
 	}
 	delCate(obj : cateStr){
 		console.log("Service posting for deleting ", obj);
 		return this.HttpClient.post(this.url, obj);
 	}
-
   constructor(private HttpClient : HttpClient) { }
 }
