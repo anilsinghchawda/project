@@ -7,27 +7,27 @@ import { AdminModule } from './admin/admin.module';
 
 
 import { AppComponent } from './app.component';
-import { BrandComponent } from './brand/brand.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ContentComponent } from './content/content.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { ImageComponent } from './image/image.component';
-import { CatnavComponent } from './catnav/catnav.component';
-import { ProductComponent } from './product/product.component';
-import { EachproComponent } from './eachpro/eachpro.component';
+import { BrandComponent } from './component/brand/brand.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { ContentComponent } from './component/content/content.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { HomeComponent } from './component/home/home.component';
+import { ImageComponent } from './component/image/image.component';
+import { CatnavComponent } from './component/catnav/catnav.component';
+import { ProductComponent } from './component/product/product.component';
+import { EachproComponent } from './component/eachpro/eachpro.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CartComponent } from './cart/cart.component';
-import { AccountComponent } from './account/account.component';
-import { ArrivalComponent } from './arrival/arrival.component';
-import { SearchComponent } from './search/search.component';
-import { KccComponent } from './kcc/kcc.component';
-import { SoldComponent } from './sold/sold.component';
-import { SeminarsComponent } from './seminars/seminars.component';
-import { AdviserComponent } from './adviser/adviser.component';
-import { ApplyComponent } from './apply/apply.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { ShopComponent } from './shop/shop.component';
+import { CartComponent } from './component/cart/cart.component';
+import { AccountComponent } from './component/account/account.component';
+import { ArrivalComponent } from './component/arrival/arrival.component';
+import { SearchComponent } from './component/search/search.component';
+import { KccComponent } from './component/kcc/kcc.component';
+import { SoldComponent } from './component/sold/sold.component';
+import { SeminarsComponent } from './component/seminars/seminars.component';
+import { AdviserComponent } from './component/adviser/adviser.component';
+import { ApplyComponent } from './component/apply/apply.component';
+import { FeedbackComponent } from './component/feedback/feedback.component';
+import { ShopComponent } from './component/shop/shop.component';
 
 @NgModule({
   declarations: [

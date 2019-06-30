@@ -2,7 +2,7 @@
 <div class="row m-1">
   <div class="col-md-12">
 
-      <div id="caro2" class="carousel slide" data-ride="carousel">
+      <div id="caro2" class="carousel row" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#caro2" data-slide-to="0" class="active"></li>
     <li data-target="#caro2" data-slide-to="1"></li>
@@ -12,12 +12,9 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
     <div class="row">
-      <ul class="row list-inline">
-        <li class="col-md-2" *ngFor="let x of data">
+        <div class="col-md-2" *ngFor="let x of data">
           <app-eachpro></app-eachpro>
-        </li>
-      </ul>
-    </div>
+        </div>
     </div>
     </div>
   </div>
