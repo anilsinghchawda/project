@@ -15,9 +15,10 @@ export class CategoryService {
 		console.log("Service posting", a);
 		return this.HttpClient.post(this.url, a);
 	}
-	delCate(obj : cateStr){
-		console.log("Service posting for deleting ", obj);
-		return this.HttpClient.post(this.url, obj);
+	delCate(id : number){
+		console.log("Service posting for deleting ", id);
+						return this.HttpClient.delete(this.url, $[id]);
 	}
   constructor(private HttpClient : HttpClient) { }
 }
+

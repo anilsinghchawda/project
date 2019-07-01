@@ -9,18 +9,17 @@ routes.get("/", function(req, res){
 		res.send(result);
 	})
 });
-routes.post("/", function(req, res){
-	if(req.body._id){
-		var id = new mongo.ObjectId(req.body._id);
+routes.delete("/", function(req, res){
+		var id = mongo.ObjectId(id);
 		console.log(id);
 		category.remove({_id : id}, function(err, result){
 			res.send(result);
 		})
-	}else{
+	});
+routes.post("/", function(req, res){
 	console.log("Category added controllers say", req.body);
 	category.insert(req.body, function(err, result){
 		res.send(result.ops[0]);
 	})
-}
 });
 module.exports=routes;

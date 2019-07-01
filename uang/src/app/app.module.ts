@@ -28,6 +28,7 @@ import { AdviserComponent } from './component/adviser/adviser.component';
 import { ApplyComponent } from './component/apply/apply.component';
 import { FeedbackComponent } from './component/feedback/feedback.component';
 import { ShopComponent } from './component/shop/shop.component';
+import { Product2Component } from './component/product2/product2.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ShopComponent } from './component/shop/shop.component';
     AdviserComponent,
     ApplyComponent,
     FeedbackComponent,
-    ShopComponent
+    ShopComponent,
+    Product2Component
   ],
   imports: [
     BrowserModule,
