@@ -22,6 +22,7 @@ user = {} as userObj;
 log = {} as logObj;
   constructor(private dulClass : LogService, private dulUsers : UsersService) { }
   empty(){
+    this.log={} as logObj;
   }
   sign:boolean;
   signcheck(){
@@ -34,16 +35,19 @@ log = {} as logObj;
   	this.sign=false;
     this.otp = false;
   }
+  public userLoggedIn:boolean;
+  public username = "Anil Singh";
   login(obj : logObj):void{
     console.log("....................", obj);
     obj.contact = this.user.contact;
     this.dulClass.logFun(obj).subscribe((back : any)=>{
+      this.userLoggedIn=back;
     jQuery("#login").modal("hide");
-    let userLoggedIn=true;
-
+    console.log("Login successfull");
     })
-
-
+  }
+  logout(){
+    this.userLoggedIn=false;
   }
   signup(obj : userObj){
     jQuery("#login").modal("show");
@@ -56,20 +60,7 @@ log = {} as logObj;
   })
 
   }
-  comeObj:{
-    name:null,
-    age:null
-  }
- 
-  get(){
-   this.dulClass.get().subscribe((come : any)=>{
-     console.log(this.comeObj);
-     return this.comeObj=come;
-   });
-  };
-
-
-  ngOnInit() {
+    ngOnInit() {
     this.sign = false;
     this.otp = false;
     jQuery("#login").modal("show");

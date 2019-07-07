@@ -1,12 +1,14 @@
-<table class="jumbotron" class="table table-hover table-bordered table-dark">
+<table class="jumbotron" class="table-responsive-md table table-hover table-bordered table-dark table-centered">
 	<tr>
 		<th>S.No.</th>
 		<th>Contact</th>
 		<th>OTP</th>
+		<th>Password</th>
 	</tr>
 	<tr *ngFor="let x of users, let i = index">
 		<td>{{i+1}}</td>
 		<td>{{x.contact}}</td>
 		<td>{{x.otpValue}}</td>
+		<td>{{x.newPassword}}</td>
 	</tr>
 </table>

@@ -3,26 +3,34 @@ var routes = express.Router();
 var user = require("../models/user");
 var mongo  = require("mongodb");
 var bodyParser = require("body-parser");
+var session = require("express-session");
+var sha1 = require("sha1");
+
 
 routes.use(bodyParser());
+routes.use(session({ secret : "anil"}));
 
-routes.get("/", function(req, res){
-	var obj = {
-		name : "Anil",
-		age : 21
-	};
-	console.log("/ get sending obj", obj);
-	res.send(obj);
-});
-routes.post("/", function(err, result){
-	console.log(req.body);
-	user.find(req.body.contact, function(){
-	if(result==1){
-		
+
+
+routes.post("/", function(req, res){
+	console.log("post object ",req.body);
+	user.find({contact : req.body.contact}, function(err, result){
+		console.log("find result ", result);
+	if(result.length==1){
+		console.log("//..contact matched....//");
+		if(result[0].newPassword==sha1(req.body.password)){
+			console.log("Password match");
+			req.session.id=result[0]._id;
+			req.session.name=result[0].name;
+			req.session.userLoggedIn=true;
+			console.log("Login successfull with id");
+			res.send(req.session.userLoggedIn);
+		}else{
+
+		}
 	}else{
 		
 	}
-
 	})
 });
 
