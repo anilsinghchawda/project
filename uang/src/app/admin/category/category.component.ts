@@ -11,10 +11,8 @@ import { CategoryService} from '../services/category.service';
 })
 export class CategoryComponent implements OnInit {
 	public cate : cateStr[];
-	public newCate : cateStr={
-		name:null,
-		_id : null
-	};
+	public newCate = {} as cateStr;
+  	// public cate = {} as cateStr[];
 	add(){
 		console.log("category.ts sending..", this.newCate.name);
 		this.dulClass.addCate(this.newCate).subscribe((info : any)=>{
@@ -24,10 +22,13 @@ export class CategoryComponent implements OnInit {
 			// return this.cate=info;
 		})
 	}
-	public cateObj : cateStr;
 	askDel(a:cateStr){
 		this.cateObj=a;
 	}
+	public cateObj : cateStr={
+		name : null,
+		_id : null
+	};
 	del(){
 		var index = this.cate.indexOf(this.cateObj);
 		console.log(this.cateObj._id);
@@ -40,9 +41,8 @@ export class CategoryComponent implements OnInit {
 	}
   constructor(private dulClass : CategoryService) { }
   ngOnInit() {
-  	this.cate = {} as cateStr[];
   this.dulClass.getCate().subscribe((data : any)=>{
-  	return this.cate= data;
+  	return this.cate = data;
   });	  		
 }
 }

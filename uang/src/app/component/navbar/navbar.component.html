@@ -67,27 +67,28 @@
             </div>
             <div class="modal-body">
               <form #obj="ngForm" ngNativeValidate >
-              <div class="form-group">
-                <label>Mobile Number/Email Id</label>
-                 <input type="text" required [(ngModel)]="contact" name="contact" class="form-control" placeholder="Mobile OR Email">
+              <div class="form-group" [class.has-error]="contactControl.invalid && contactControl.touched">
+                <label >Mobile Number/Email Id</label>
+                 <input type="text" required [(ngModel)]="user.contact" name="user.contact" class="form-control" #contactControl="ngModel" placeholder="Mobile OR Email">
+                 <span class="help-block text-danger m-1" *ngIf="contactControl.invalid && contactControl.touched">Invalid number</span>
                 </div>
                 <div class="form-group">
                   <button *ngIf="sign" class="btn btn-success" (click)="otpCheck()">Continue</button>
                 </div>
                 <div *ngIf="otp" class="form-group">
                 <label>Enter OTP</label>
-                  <input required type="text" class="form-control" name="otpValue" [(ngModel)]="otpValue" placeholder="Mobile OTP">                  
+                  <input required type="text" class="form-control" name="otpValue" [(ngModel)]="user.otpValue" placeholder="Mobile OTP">                  
                 </div>
                 <div *ngIf="otp" class="form-group">
                 <label>Create Password</label>
-                <input required type="text" [(ngModel)]="newPassword" name="newPassword" class="form-control" placeholder="Password">
+                <input required type="text" [(ngModel)]="user.newPassword" name="newPassword" class="form-control" placeholder="Password">
                 </div>
                 <div *ngIf="!sign" class="form-group">
                   <label>Password</label>
-                  <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
+                  <input type="password" [(ngModel)]="log.password" name="password" class="form-control" placeholder="Password">
                 </div>
-                 <a *ngIf="!sign"class="btn btn-success text-light" (click)="login(obj)">Login</a>
-                 <a *ngIf="sign" class="btn btn-success text-light" (click)="signup(obj)">SignUp</a>
+                 <a *ngIf="!sign"class="btn btn-success text-light" (click)="login(log , user)">Login</a>
+                 <a *ngIf="sign" class="btn btn-success text-light" (click)="signup(user)">SignUp</a>
                  <button class="btn btn-danger m-3" data-dismiss="modal">Cancel</button> 
      <p *ngIf="!sign" class="text-center text-small">If you are new member <a href="#" (click)="signcheck()">SignUp</a></p>
      <p *ngIf="sign" class="text-center text-small">Already a member <a href="#" (click)="logcheck()">Login</a></p>

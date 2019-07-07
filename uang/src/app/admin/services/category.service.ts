@@ -17,7 +17,7 @@ export class CategoryService {
 	}
 	delCate(id : number){
 		console.log("Service posting for deleting ", id);
-						return this.HttpClient.delete(this.url, $[id]);
+		return this.HttpClient.delete(this.url, $[id]);
 	}
   constructor(private HttpClient : HttpClient) { }
 }

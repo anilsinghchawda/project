@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import * as bootstrap from "bootstrap";
 import * as $ from 'jquery';
 import { LogService } from '../services/log.service';
+import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
 import { MatInput } from '@angular/material/input';
-
+import { userObj } from '../models';
+import { logObj } from '../models';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
@@ -14,14 +16,11 @@ import {ErrorStateMatcher} from '@angular/material/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-   emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-
-public  otp = false;
+public otp = false;
  
-  constructor(private dulClass : LogService) { }
+user = {} as userObj;
+log = {} as logObj;
+  constructor(private dulClass : LogService, private dulUsers : UsersService) { }
   empty(){
   }
   sign:boolean;
@@ -35,19 +34,24 @@ public  otp = false;
   	this.sign=false;
     this.otp = false;
   }
-  login(obj :NgForm):void{
-    console.log("....................", obj.value);
-
+  login(obj : logObj):void{
+    console.log("....................", obj);
+    obj.contact = this.user.contact;
+    this.dulClass.logFun(obj).subscribe((back : any)=>{
     jQuery("#login").modal("hide");
+    let userLoggedIn=true;
+
+    })
+
 
   }
-  signup(obj : NgForm):void{
+  signup(obj : userObj){
     jQuery("#login").modal("show");
     console.log("Navbar sending");
-    this.dulClass.signFun(obj).subscribe((back : any)=>{
+    this.dulUsers.signFun(obj).subscribe((back : any)=>{
     this.sign = false;
     this.otp=false;
-    console.log("SignUP successfull(navbar component says)");
+    console.log("SignUP successfull (navbar component says)");
     return back;
   })
 

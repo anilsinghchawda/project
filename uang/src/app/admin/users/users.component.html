@@ -1,1 +1,12 @@
-<h1>User Work</h1>
+<table class="jumbotron" class="table table-hover table-bordered table-dark">
+	<tr>
+		<th>S.No.</th>
+		<th>Contact</th>
+		<th>OTP</th>
+	</tr>
+	<tr *ngFor="let x of users, let i = index">
+		<td>{{i+1}}</td>
+		<td>{{x.contact}}</td>
+		<td>{{x.otpValue}}</td>
+	</tr>
+</table>

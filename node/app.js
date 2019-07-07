@@ -19,8 +19,8 @@ app.use(function(req, res, next) {
 
 
 app.use(routes);
-app.use(bodyParser()); 
 app.use(express.static(__dirname +"/public/"));
+app.use(bodyParser()); 
 app.use(cookieParser());
 app.use(session({ secret : "anil"}));
 app.use(cache());
