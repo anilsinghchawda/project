@@ -33,5 +33,9 @@ routes.post("/", function(req, res){
 	}
 	})
 });
+routes.get("/", function(req, res){
+	req.session.destroy();
+	res.send(req.session.userLoggedIn);
+});
 
 module.exports=routes;

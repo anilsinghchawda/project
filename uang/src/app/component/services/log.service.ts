@@ -13,7 +13,11 @@ logFun(obj : logObj){
  console.log("service posting obj for login", obj);
  return this.http.post(this.url, obj); 
 }
+logoutFun(){
+	return this.http.get(this.url);
+}
   constructor(private http : HttpClient ) { }
 }
+
 
 

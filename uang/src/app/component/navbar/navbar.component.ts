@@ -47,7 +47,9 @@ log = {} as logObj;
     })
   }
   logout(){
-    this.userLoggedIn=false;
+    this.dulClass.logoutFun().subscribe((back : any)=>{
+   return this.userLoggedIn=false;
+    })
   }
   signup(obj : userObj){
     jQuery("#login").modal("show");
