@@ -18,9 +18,8 @@ import {ErrorStateMatcher} from '@angular/material/core';
 export class NavbarComponent implements OnInit {
 public otp = false;
  
-user = {} as userObj;
+users = {} as userObj;
 log = {} as logObj;
-  constructor(private dulClass : LogService, private dulUsers : UsersService) { }
   empty(){
     this.log={} as logObj;
   }
@@ -36,19 +35,28 @@ log = {} as logObj;
     this.otp = false;
   }
   public userLoggedIn:boolean;
+  public userId:string;
   public username = "Anil Singh";
   login(obj : logObj):void{
     console.log("....................", obj);
-    obj.contact = this.user.contact;
+    obj.contact = this.users.contact;
     this.dulClass.logFun(obj).subscribe((back : any)=>{
-      this.userLoggedIn=back;
+      console.log(back.userLoggedIn);
+      console.log(back._id);
+      // this.userLoggedIn=new Observable<boolean> 
+      //   observe=>{
+      //     back.userLoggedIn;
+      //   };
+      // this.userLoggedIn=back.userLoggedIn;
+      // this.userId=back._id;
     jQuery("#login").modal("hide");
     console.log("Login successfull");
     })
   }
   logout(){
     this.dulClass.logoutFun().subscribe((back : any)=>{
-   return this.userLoggedIn=false;
+      console.log(back);
+     return this.userLoggedIn=back;
     })
   }
   signup(obj : userObj){
@@ -62,9 +70,12 @@ log = {} as logObj;
   })
 
   }
+  constructor(private dulClass : LogService, private dulUsers : UsersService) { }
     ngOnInit() {
+   
+    if(!this.userLoggedIn){
     this.sign = false;
     this.otp = false;
     jQuery("#login").modal("show");
-  }
+  }}
 }

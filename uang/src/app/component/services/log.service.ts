@@ -14,6 +14,7 @@ logFun(obj : logObj){
  return this.http.post(this.url, obj); 
 }
 logoutFun(){
+	console.log("service function called");
 	return this.http.get(this.url);
 }
   constructor(private http : HttpClient ) { }

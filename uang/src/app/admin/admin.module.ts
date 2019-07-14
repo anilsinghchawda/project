@@ -10,13 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { UsersComponent } from './users/users.component';
 import { AdminComponent } from './admin.component';
+import { ViewproComponent } from './viewpro/viewpro.component';
 
 @NgModule({
   declarations: [CategoryComponent,
   NavbarComponent, 
   HomeComponent, 
   ProductComponent, 
-  UsersComponent, AdminComponent],
+  UsersComponent, AdminComponent, ViewproComponent],
   imports:[
     CommonModule,
     AdminRoutingModule,

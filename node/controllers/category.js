@@ -15,7 +15,7 @@ routes.delete("/", function(req, res){
 		category.remove({_id : id}, function(err, result){
 			res.send(result);
 		})
-	});
+});
 routes.post("/", function(req, res){
 	console.log("Category added controllers", req.body);
 	category.insert(req.body, function(err, result){

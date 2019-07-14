@@ -29,6 +29,7 @@ import { ApplyComponent } from './component/apply/apply.component';
 import { FeedbackComponent } from './component/feedback/feedback.component';
 import { ShopComponent } from './component/shop/shop.component';
 import { Product2Component } from './component/product2/product2.component';
+import { ProfileComponent } from './component/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { Product2Component } from './component/product2/product2.component';
     ApplyComponent,
     FeedbackComponent,
     ShopComponent,
-    Product2Component
+    Product2Component,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

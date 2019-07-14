@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { ViewproComponent } from './viewpro/viewpro.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CategoryComponent } from './category/category.component';
 import { UsersComponent } from './users/users.component';
@@ -10,7 +11,11 @@ const routes : Routes = [
 {
 	path : 'admin', component : NavbarComponent, children : [
 	{
-			path : 'product', component : ProductComponent
+			path : 'addproduct', component : ProductComponent
+
+	},
+	{
+			path : 'viewproduct', component : ViewproComponent
 
 	},
 	{

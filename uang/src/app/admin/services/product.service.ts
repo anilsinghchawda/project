@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService{
   constructor(private http : HttpClient) { }
-  public url = "localhost:3000/product";
+  public url = "http://localhost:3000/product";
   addPro(obj : any){
-  	return this.http.post(this.url, obj);
+  	console.log("Service forwarding product", obj);
+  	return this.http.post("http://localhost:3000/product", obj);
 }}

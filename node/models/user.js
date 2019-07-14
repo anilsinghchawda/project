@@ -10,3 +10,8 @@ module.exports.find=function(obj, cb){
 		client.db("project").collection("user").find(obj).toArray(cb);
 	})
 }
+module.exports.update=function(where, obj, cb){
+	connect(function(err, client){
+		client.db("project").collection("user").update({where}, obj, cb)
+	})
+}

@@ -10,8 +10,6 @@ var sha1 = require("sha1");
 routes.use(bodyParser());
 routes.use(session({ secret : "anil"}));
 
-
-
 routes.post("/", function(req, res){
 	console.log("post object ",req.body);
 	user.find({contact : req.body.contact}, function(err, result){
@@ -20,11 +18,11 @@ routes.post("/", function(req, res){
 		console.log("//..contact matched....//");
 		if(result[0].newPassword==sha1(req.body.password)){
 			console.log("Password match");
-			req.session.id=result[0]._id;
+			req.session._id=result[0]._id;
 			req.session.name=result[0].name;
 			req.session.userLoggedIn=true;
-			console.log("Login successfull with id");
-			res.send(req.session.userLoggedIn);
+			console.log("Login successfull with id", req.session);
+			res.send(req.session);
 		}else{
 
 		}
@@ -35,7 +33,8 @@ routes.post("/", function(req, res){
 });
 routes.get("/", function(req, res){
 	req.session.destroy();
-	res.send(req.session.userLoggedIn);
+	console.log("logout successfully", req.session);
+	res.send(false);
 });
 
 module.exports=routes;

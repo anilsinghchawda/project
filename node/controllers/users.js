@@ -11,6 +11,18 @@ routes.get("/", function(req, res){
 		res.send(result);
 })
 });
+routes.get("/logged", function(req, res ){ 
+	user.find({_id : req.session._id}, function(err, result){
+		console.log("Profile should be edit of", result);
+		res.send(result);
+	})
+});
+routes.patch("/logged", function(req, res ){ 
+	user.update({_id : req.session._id}, obj, function(err, result){
+		console.log("Profile should be edit of", result);
+		res.send(result);
+	})
+});
 routes.post("/", function(req, res){
 	req.body.newPassword = sha1(req.body.newPassword);
 	console.log("Login controller Recieving", req.body);

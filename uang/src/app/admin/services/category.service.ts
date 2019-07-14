@@ -9,16 +9,16 @@ export class CategoryService {
 	public url = "http://localhost:3000/category";
 
 	getCate(){
-		 return this.HttpClient.get(this.url);
+		 return this.http.get(this.url);
 	}
 	addCate(a:cateStr){
 		console.log("Service posting", a);
-		return this.HttpClient.post(this.url, a);
+		return this.http.post(this.url, a);
 	}
 	delCate(id : number){
 		console.log("Service posting for deleting ", id);
-		return this.HttpClient.delete(this.url, $[id]);
+		return this.http.delete(this.url, $[id]);
 	}
-  constructor(private HttpClient : HttpClient) { }
+  constructor(private http : HttpClient) { }
 }
 

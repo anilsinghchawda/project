@@ -7,6 +7,7 @@ var session = require("express-session");
 var flash = require("express-flash");
 var cache = require("nocache");
 var upload = require("express-fileupload");
+var fileUpload  = require("file-upload");
 var random = require("randomstring");
 
 app.use(function(req, res, next) {
@@ -14,9 +15,7 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
   next();
-
 });
-
 
 app.use(routes);
 app.use(express.static(__dirname +"/public/"));
