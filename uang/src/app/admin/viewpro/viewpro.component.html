@@ -18,10 +18,19 @@
 				<th>Rating</th>
 				
 			</tr>
-			<tr *ngFor="let x of cate, let i = index">
+			<tr *ngFor="let x of pro, let i = index">
 				<td>{{i+1}}</td>
-				<td>{{x.name}}</td>
-				<td></td>
+				<td>{{x.proname}}</td>
+				<td>{{x.ingrediant}}</td>
+				<td>{{x.file}}</td>
+				<td>{{x.price}}</td>
+				<td>{{x.category}}</td>
+				<td>{{x.company}}</td>
+				<td *ngFor="let y of x.season">{{y}}</td>
+				<td *ngFor="let z of x.type">{{z}}</td>
+				<td *ngFor="let t of x.rabi">{{t}}</td>
+				<td *ngFor="let s of x.kharif">{{s}}</td>
+				<td>{{x.rating}}</td>
 				<td><button class="btn btn-info" (click)="edit(x)">Edit</button></td>
 				<td><button class="btn btn-danger" data-target="#del" data-toggle="modal" (click)="askDel(x)">Delete</button></td>
 			</tr>
